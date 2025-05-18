@@ -7,9 +7,7 @@ bookings(id, user_id, property_id)
 properties(id, title)
 
 ✅ 1. Aggregation Query — Total Bookings per User
-sql
-Copy
-Edit
+
 -- Total number of bookings made by each user
 SELECT
   users.id AS user_id,
@@ -20,13 +18,11 @@ LEFT JOIN bookings ON users.id = bookings.user_id
 GROUP BY users.id, users.name
 ORDER BY total_bookings DESC;
 ✅ 2. Window Function — Rank Properties by Booking Count
-sql
-Copy
-Edit
--- Rank properties by total number of bookings using ROW_NUMBER
+
+-- Rank properties by total number of bookings using RANK()
 SELECT
   property_id,
   COUNT(*) AS total_bookings,
-  ROW_NUMBER() OVER (ORDER BY COUNT(*) DESC) AS booking_rank
+  RANK() OVER (ORDER BY COUNT(*) DESC) AS booking_rank
 FROM bookings
 GROUP BY property_id;
