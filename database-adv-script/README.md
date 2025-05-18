@@ -17,3 +17,17 @@ This script demonstrates two types of SQL subqueries:
 2. **Correlated Subquery**: Selects all users who have made more than 3 bookings.
 
 These queries are used to extract complex, analytical insights from relational data.
+
+
+
+# Airbnb Clone – Aggregations and Window Functions
+
+This script includes:
+
+1. **Aggregations**:
+   - A `COUNT` and `GROUP BY` query to find the total number of bookings each user has made.
+
+2. **Window Functions**:
+   - A `ROW_NUMBER` function to rank properties based on their total number of bookings.
+
+These queries are designed to demonstrate aggregate analysis and ranking capabilities in SQL.
